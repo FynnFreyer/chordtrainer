@@ -287,26 +287,28 @@ class App():
 
 
 if __name__ == "__main__":
+    app = App()
+
     try:
-        app = App()
         app.main()
     except (KeyboardInterrupt, SystemExit):
         print("\nGood bye and thanks for playing!")
-        exit = 0
+        exit_code = 0
         time.sleep(0.5)
     except IndexError:
         print("\nCritical failure encountered, will terminate program now!\n")
         traceback.print_exc()
         print()
         print("Content of harmonic_table: " + str(app.harmonic_table))
-        exit = 1
+        exit_code = 1
         time.sleep(0.5)
     except:
         print("\nCritical failure encountered, will terminate program now!\n")
         traceback.print_exc()
-        exit = 1
+        exit_code = 1
         time.sleep(0.5)
-    sys.exit(exit)
+
+    sys.exit(exit_code)
 
 """
 
